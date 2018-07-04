@@ -4,7 +4,7 @@ if !exists("g:ts_calc_command")
     let g:ts_logout_command = timesheet_cmd . "logout"
     let g:ts_sum_command = timesheet_cmd . "sum"
     let g:ts_balance_command = timesheet_cmd . "balance"
-    " let g:ts_report_command = timesheet_cmd . "report"
+    let g:ts_report_command = timesheet_cmd . "report"
 endif
 
 function! CalcTime(start_line, end_line)
@@ -38,5 +38,6 @@ function! NCalcTime()
 endfunction
 
 nnoremap <CR> :call NCalcTime()<CR>
-vnoremap <CR> :call VSumTime()<CR>
+vnoremap <CR> :call VCalcTime()<CR>
+vnoremap <Leader>s :call VSumTime()<CR>
 vnoremap <Leader>b :call VBalanceTime()<CR>
